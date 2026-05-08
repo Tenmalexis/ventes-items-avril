@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)file:///C:/Users/adtg6/Downloads/hdv_tops_avril2026_3.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HDV — Items les plus vendus — Avril 2026</title>
+<link href="./HDV — Items les plus vendus — Avril 2026_files/css2" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c10;--bg2:#111318;--bg3:#181b22;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --gold:#f4b400;--text:#e8eaf0;--muted:#5a5f72;--muted2:#7c8299;
+  --c-dofus:#a78bfa;--c-prysma:#fb923c;--c-fam:#34d399;
+  --c-equip:#38bdf8;--c-runes:#f472b6;--c-montiliers:#fbbf24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;padding:36px 20px 60px}
+.page{max-width:860px;margin:0 auto}
+
+.header{text-align:center;margin-bottom:40px;animation:fadeDown 0.5s ease both}
+.eyebrow{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.header h1{font-family:'Rajdhani',sans-serif;font-size:clamp(24px,4vw,42px);font-weight:700;line-height:1.1;margin-bottom:8px}
+.header h1 span{color:var(--gold)}
+.header-sub{font-size:13px;color:var(--muted2)}
+.header-line{width:50px;height:2px;background:var(--gold);margin:16px auto 0;border-radius:1px}
+
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:24px}
+.tab{display:flex;flex-direction:column;align-items:center;gap:4px;padding:11px 8px;border-radius:10px;border:1px solid var(--border);background:var(--bg2);cursor:pointer;transition:all 0.15s;position:relative;overflow:hidden}
+.tab::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;opacity:0;transition:opacity 0.15s}
+.tab:hover{border-color:var(--border2);background:var(--bg3)}
+.tab.active{border-color:var(--border2);background:var(--bg3)}
+.tab.active::after{opacity:1}
+.tab-name{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.tab-count{font-size:10px;color:var(--muted)}
+
+.tab[data-cat="dofus"]      .tab-name{color:var(--c-dofus)}
+.tab[data-cat="dofus"].active::after{background:var(--c-dofus)}
+.tab[data-cat="prysma"]     .tab-name{color:var(--c-prysma)}
+.tab[data-cat="prysma"].active::after{background:var(--c-prysma)}
+.tab[data-cat="fam"]        .tab-name{color:var(--c-fam)}
+.tab[data-cat="fam"].active::after{background:var(--c-fam)}
+.tab[data-cat="equip"]      .tab-name{color:var(--c-equip)}
+.tab[data-cat="equip"].active::after{background:var(--c-equip)}
+.tab[data-cat="runes"]      .tab-name{color:var(--c-runes)}
+.tab[data-cat="runes"].active::after{background:var(--c-runes)}
+.tab[data-cat="montiliers"] .tab-name{color:var(--c-montiliers)}
+.tab[data-cat="montiliers"].active::after{background:var(--c-montiliers)}
+
+.panel{display:none;animation:fadeUp 0.25s ease both}
+.panel.active{display:block}
+
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.sec-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.sec-title{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.sec-line{flex:1;height:1px;background:var(--border)}
+.sec-meta{font-size:11px;color:var(--muted);white-space:nowrap}
+
+.items{display:flex;flex-direction:column;gap:4px}
+.row{display:grid;grid-template-columns:42px 1fr 90px;align-items:center;gap:10px;padding:9px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg2);position:relative;overflow:hidden;transition:border-color 0.15s}
+.row.in:hover{border-color:var(--border2)}
+.row.out{opacity:1;filter:none}
+.row-bg{position:absolute;left:0;top:0;bottom:0;opacity:0.05;pointer-events:none}
+.row-accent{position:absolute;left:0;top:0;bottom:0;width:3px}
+.rank{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;text-align:center;color:var(--muted2);line-height:1;position:relative}
+.rank.med{font-size:21px}
+.name{font-size:13px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:relative}
+.bar{margin-top:3px;height:2px;background:var(--border);border-radius:1px;overflow:hidden}
+.bar-fill{height:100%;border-radius:1px}
+.sales{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;position:relative}
+
+.cutoff{display:flex;align-items:center;gap:8px;margin:8px 0 4px}
+.cut-line{flex:1;height:1px;background:var(--border)}
+.cut-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding:0 4px}
+
+.footer{text-align:center;margin-top:44px;padding-top:20px;border-top:1px solid var(--border)}
+.footer-logo{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;color:var(--gold);letter-spacing:2px}
+.footer-sub{font-size:11px;color:var(--muted);margin-top:4px}
+
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div class="eyebrow">Tenmalexis · Dofus 3</div>
+    <h1>Items les plus vendus<br><span>à l'HDV — Avril 2026</span></h1>
+    <div class="header-sub">Données collectées sur 30 jours · Cours du marché</div>
+    <div class="header-line"></div>
+  </div>
+
+  <div class="tabs" id="tabs"><div class="tab" data-cat="dofus" onclick="switchTab(&#39;dofus&#39;)">
+      <span class="tab-name">Dofus</span>
+      <span class="tab-count">21 items · top 5</span>
+    </div><div class="tab" data-cat="prysma" onclick="switchTab(&#39;prysma&#39;)">
+      <span class="tab-name">Prysmaradite</span>
+      <span class="tab-count">9 items · top 5</span>
+    </div><div class="tab" data-cat="fam" onclick="switchTab(&#39;fam&#39;)">
+      <span class="tab-name">Familiers</span>
+      <span class="tab-count">16 items · top 5</span>
+    </div><div class="tab" data-cat="equip" onclick="switchTab(&#39;equip&#39;)">
+      <span class="tab-name">Équipements</span>
+      <span class="tab-count">49 items · top 10</span>
+    </div><div class="tab active" data-cat="runes" onclick="switchTab(&#39;runes&#39;)">
+      <span class="tab-name">Runes</span>
+      <span class="tab-count">35 items · top 5</span>
+    </div><div class="tab" data-cat="montiliers" onclick="switchTab(&#39;montiliers&#39;)">
+      <span class="tab-name">Montiliers</span>
+      <span class="tab-count">11 items · top 5</span>
+    </div></div>
+  <div id="panels"><div class="panel" id="panel-dofus">
+    <div class="sec-head">
+      <div class="sec-dot" style="background:var(--c-dofus)"></div>
+      <div class="sec-title" style="color:var(--c-dofus)">Dofus</div>
+      <div class="sec-line"></div>
+      <div class="sec-meta">20 items · top 5 retenu</div>
+    </div>
+    <div class="items"><div class="row in">
+      <div class="row-bg" style="width:100%;background:var(--c-dofus)"></div><div class="row-accent" style="background:var(--c-dofus)"></div>
+      <div class="rank med">🥇</div>
+      <div>
+        <div class="name">Dofus Pourpre</div>
+        <div class="bar"><div class="bar-fill" style="width:100%;background:var(--c-dofus)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-dofus)">
+        2 709
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:98%;background:var(--c-dofus)"></div><div class="row-accent" style="background:var(--c-dofus)"></div>
+      <div class="rank med">🥈</div>
+      <div>
+        <div class="name">Dofus Kaliptus</div>
+        <div class="bar"><div class="bar-fill" style="width:98%;background:var(--c-dofus)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-dofus)">
+        2 649
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:90%;background:var(--c-dofus)"></div><div class="row-accent" style="background:var(--c-dofus)"></div>
+      <div class="rank med">🥉</div>
+      <div>
+        <div class="name">Dofus Cawotte</div>
+        <div class="bar"><div class="bar-fill" style="width:90%;background:var(--c-dofus)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-dofus)">
+        2 433
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:70%;background:var(--c-dofus)"></div><div class="row-accent" style="background:var(--c-dofus)"></div>
+      <div class="rank">4</div>
+      <div>
+        <div class="name">Dofus Turquoise</div>
+        <div class="bar"><div class="bar-fill" style="width:70%;background:var(--c-dofus)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-dofus)">
+        1 894
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:54%;background:var(--c-dofus)"></div><div class="row-accent" style="background:var(--c-dofus)"></div>
+      <div class="rank">5</div>
+      <div>
+        <div class="name">Dofus Emeraude</div>
+        <div class="bar"><div class="bar-fill" style="width:54%;background:var(--c-dofus)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-dofus)">
+        1 460
+      </div>
+    </div><div class="cutoff"><div class="cut-line"></div><span class="cut-label">hors top 5</span><div class="cut-line"></div></div><div class="row out">
+      
+      <div class="rank">6</div>
+      <div>
+        <div class="name">Dofus des Glaces</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 392
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">7</div>
+      <div>
+        <div class="name">Dofus Abyssal</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 009
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">8</div>
+      <div>
+        <div class="name">Dofus Ocre</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        837
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">9</div>
+      <div>
+        <div class="name">Dofus Nebuleux</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        736
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">10</div>
+      <div>
+        <div class="name">Dokoko</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        689
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">11</div>
+      <div>
+        <div class="name">Dofus Vulbis</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        674
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">12</div>
+      <div>
+        <div class="name">Dofus Ivoire</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        669
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">13</div>
+      <div>
+        <div class="name">Dorigami</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        632
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">14</div>
+      <div>
+        <div class="name">Dofus des Veilleurs</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        552
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">15</div>
+      <div>
+        <div class="name">Dofus Tacheté</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        525
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">16</div>
+      <div>
+        <div class="name">Dolmanax</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        523
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">17</div>
+      <div>
+        <div class="name">Dofus Ébène</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        519
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">18</div>
+      <div>
+        <div class="name">Dofus Forgelave</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        268
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">19</div>
+      <div>
+        <div class="name">Dofus Cauchemar</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        227
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">20</div>
+      <div>
+        <div class="name">Dofus Sylvestre</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        132
+      </div>
+    </div></div>
+  </div><div class="panel" id="panel-prysma">
+    <div class="sec-head">
+      <div class="sec-dot" style="background:var(--c-prysma)"></div>
+      <div class="sec-title" style="color:var(--c-prysma)">Prysmaradite</div>
+      <div class="sec-line"></div>
+      <div class="sec-meta">9 items · top 5 retenu</div>
+    </div>
+    <div class="items"><div class="row in">
+      <div class="row-bg" style="width:100%;background:var(--c-prysma)"></div><div class="row-accent" style="background:var(--c-prysma)"></div>
+      <div class="rank med">🥇</div>
+      <div>
+        <div class="name">Prycipithon Mate</div>
+        <div class="bar"><div class="bar-fill" style="width:100%;background:var(--c-prysma)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-prysma)">
+        515
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:81%;background:var(--c-prysma)"></div><div class="row-accent" style="background:var(--c-prysma)"></div>
+      <div class="rank med">🥈</div>
+      <div>
+        <div class="name">Prygen</div>
+        <div class="bar"><div class="bar-fill" style="width:81%;background:var(--c-prysma)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-prysma)">
+        415
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:54%;background:var(--c-prysma)"></div><div class="row-accent" style="background:var(--c-prysma)"></div>
+      <div class="rank med">🥉</div>
+      <div>
+        <div class="name">Prynyang</div>
+        <div class="bar"><div class="bar-fill" style="width:54%;background:var(--c-prysma)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-prysma)">
+        277
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:40%;background:var(--c-prysma)"></div><div class="row-accent" style="background:var(--c-prysma)"></div>
+      <div class="rank">4</div>
+      <div>
+        <div class="name">Espryt</div>
+        <div class="bar"><div class="bar-fill" style="width:40%;background:var(--c-prysma)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-prysma)">
+        207
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:40%;background:var(--c-prysma)"></div><div class="row-accent" style="background:var(--c-prysma)"></div>
+      <div class="rank">5</div>
+      <div>
+        <div class="name">Pryssion Iridescente</div>
+        <div class="bar"><div class="bar-fill" style="width:40%;background:var(--c-prysma)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-prysma)">
+        205
+      </div>
+    </div><div class="cutoff"><div class="cut-line"></div><span class="cut-label">hors top 5</span><div class="cut-line"></div></div><div class="row out">
+      
+      <div class="rank">6</div>
+      <div>
+        <div class="name">Prymune</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        200
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">7</div>
+      <div>
+        <div class="name">Ratrapry</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        197
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">8</div>
+      <div>
+        <div class="name">Prycipithon Brillante</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        137
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">9</div>
+      <div>
+        <div class="name">Prycipithon Iridescente</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        132
+      </div>
+    </div></div>
+  </div><div class="panel" id="panel-fam">
+    <div class="sec-head">
+      <div class="sec-dot" style="background:var(--c-fam)"></div>
+      <div class="sec-title" style="color:var(--c-fam)">Familiers</div>
+      <div class="sec-line"></div>
+      <div class="sec-meta">16 items · top 5 retenu</div>
+    </div>
+    <div class="items"><div class="row in">
+      <div class="row-bg" style="width:100%;background:var(--c-fam)"></div><div class="row-accent" style="background:var(--c-fam)"></div>
+      <div class="rank med">🥇</div>
+      <div>
+        <div class="name">Kokulte</div>
+        <div class="bar"><div class="bar-fill" style="width:100%;background:var(--c-fam)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-fam)">
+        1 962
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:58%;background:var(--c-fam)"></div><div class="row-accent" style="background:var(--c-fam)"></div>
+      <div class="rank med">🥈</div>
+      <div>
+        <div class="name">Nomoon</div>
+        <div class="bar"><div class="bar-fill" style="width:58%;background:var(--c-fam)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-fam)">
+        1 142
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:51%;background:var(--c-fam)"></div><div class="row-accent" style="background:var(--c-fam)"></div>
+      <div class="rank med">🥉</div>
+      <div>
+        <div class="name">Chacha</div>
+        <div class="bar"><div class="bar-fill" style="width:51%;background:var(--c-fam)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-fam)">
+        998
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:28%;background:var(--c-fam)"></div><div class="row-accent" style="background:var(--c-fam)"></div>
+      <div class="rank">4</div>
+      <div>
+        <div class="name">Kanigloups</div>
+        <div class="bar"><div class="bar-fill" style="width:28%;background:var(--c-fam)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-fam)">
+        547
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:25%;background:var(--c-fam)"></div><div class="row-accent" style="background:var(--c-fam)"></div>
+      <div class="rank">5</div>
+      <div>
+        <div class="name">Blerodoudou</div>
+        <div class="bar"><div class="bar-fill" style="width:25%;background:var(--c-fam)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-fam)">
+        494
+      </div>
+    </div><div class="cutoff"><div class="cut-line"></div><span class="cut-label">hors top 5</span><div class="cut-line"></div></div><div class="row out">
+      
+      <div class="rank">6</div>
+      <div>
+        <div class="name">Bisouglours</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        451
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">7</div>
+      <div>
+        <div class="name">Bulbisou</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        434
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">8</div>
+      <div>
+        <div class="name">Givrefoux</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        342
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">9</div>
+      <div>
+        <div class="name">Bworky</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        295
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">10</div>
+      <div>
+        <div class="name">Chienchien</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        295
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">11</div>
+      <div>
+        <div class="name">Gwo Tofu Ventripotent</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        250
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">12</div>
+      <div>
+        <div class="name">Pioute jaune</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        244
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">13</div>
+      <div>
+        <div class="name">Pioute rouge</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        220
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">14</div>
+      <div>
+        <div class="name">Pioute bleu</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        205
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">15</div>
+      <div>
+        <div class="name">Pioute verte</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        199
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">16</div>
+      <div>
+        <div class="name">Leopardo</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        107
+      </div>
+    </div></div>
+  </div><div class="panel" id="panel-equip">
+    <div class="sec-head">
+      <div class="sec-dot" style="background:var(--c-equip)"></div>
+      <div class="sec-title" style="color:var(--c-equip)">Équipements</div>
+      <div class="sec-line"></div>
+      <div class="sec-meta">49 items · top 10 retenu</div>
+    </div>
+    <div class="items"><div class="row in">
+      <div class="row-bg" style="width:100%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank med">🥇</div>
+      <div>
+        <div class="name">Anneau Nobstant</div>
+        <div class="bar"><div class="bar-fill" style="width:100%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        1 234
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:82%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank med">🥈</div>
+      <div>
+        <div class="name">Dora Bora</div>
+        <div class="bar"><div class="bar-fill" style="width:82%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        1 010
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:72%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank med">🥉</div>
+      <div>
+        <div class="name">Coiffe de Padgref</div>
+        <div class="bar"><div class="bar-fill" style="width:72%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        888
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:61%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank">4</div>
+      <div>
+        <div class="name">Racine de Floribonde</div>
+        <div class="bar"><div class="bar-fill" style="width:61%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        750
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:55%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank">5</div>
+      <div>
+        <div class="name">Bottes du Cycloide</div>
+        <div class="bar"><div class="bar-fill" style="width:55%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        683
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:53%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank">6</div>
+      <div>
+        <div class="name">Collier du Minotot</div>
+        <div class="bar"><div class="bar-fill" style="width:53%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        651
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:47%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank">7</div>
+      <div>
+        <div class="name">Geta de Padgref</div>
+        <div class="bar"><div class="bar-fill" style="width:47%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        583
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:46%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank">8</div>
+      <div>
+        <div class="name">Anneau de Padgref</div>
+        <div class="bar"><div class="bar-fill" style="width:46%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        571
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:46%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank">9</div>
+      <div>
+        <div class="name">Bracelet du Minotot</div>
+        <div class="bar"><div class="bar-fill" style="width:46%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        570
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:46%;background:var(--c-equip)"></div><div class="row-accent" style="background:var(--c-equip)"></div>
+      <div class="rank">10</div>
+      <div>
+        <div class="name">Ceinture du Strigide</div>
+        <div class="bar"><div class="bar-fill" style="width:46%;background:var(--c-equip)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-equip)">
+        566
+      </div>
+    </div><div class="cutoff"><div class="cut-line"></div><span class="cut-label">hors top 10</span><div class="cut-line"></div></div><div class="row out">
+      
+      <div class="rank">11</div>
+      <div>
+        <div class="name">Cape du Minotot</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        565
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">12</div>
+      <div>
+        <div class="name">Amulette du Strigide</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        551
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">13</div>
+      <div>
+        <div class="name">Quatre-feuilles</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        515
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">14</div>
+      <div>
+        <div class="name">Bouclier d'Asse</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        510
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">15</div>
+      <div>
+        <div class="name">Corbacape Mastralis</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        455
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">16</div>
+      <div>
+        <div class="name">Bottines des sous-bois</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        408
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">17</div>
+      <div>
+        <div class="name">Bouclier du Cycloide</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        404
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">18</div>
+      <div>
+        <div class="name">Carapace de Torkelonia</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        374
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">19</div>
+      <div>
+        <div class="name">Baguette de Torkelonia</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        367
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">20</div>
+      <div>
+        <div class="name">Cape au logis</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        356
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">21</div>
+      <div>
+        <div class="name">Les Maidartes</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        342
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">22</div>
+      <div>
+        <div class="name">Bouclier du Sadida</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        338
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">23</div>
+      <div>
+        <div class="name">Cape de Glourdorak</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        334
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">24</div>
+      <div>
+        <div class="name">Tranche des sous-bois</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        327
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">25</div>
+      <div>
+        <div class="name">Hache à Lamelles</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        317
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">26</div>
+      <div>
+        <div class="name">Lame givrée du Chevalier de Glace</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        306
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">27</div>
+      <div>
+        <div class="name">Alliance Gloursonne</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        304
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">28</div>
+      <div>
+        <div class="name">Arc de Culbutoeuf</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        281
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">29</div>
+      <div>
+        <div class="name">Egide d'Allister</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        269
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">30</div>
+      <div>
+        <div class="name">Crocanneau</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        269
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">31</div>
+      <div>
+        <div class="name">Ecorce de Brouce</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        262
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">32</div>
+      <div>
+        <div class="name">Collier de Tourthon</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        257
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">33</div>
+      <div>
+        <div class="name">Ceinture de Brouce</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        253
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">34</div>
+      <div>
+        <div class="name">Ecu de Danathor</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        250
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">35</div>
+      <div>
+        <div class="name">Ceste gelé du Chevalier de Glace</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        250
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">36</div>
+      <div>
+        <div class="name">Bouclier d'Ilyzaelle</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        246
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">37</div>
+      <div>
+        <div class="name">Disque de Culbutoeuf</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        245
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">38</div>
+      <div>
+        <div class="name">Bouclier du Captain Amakna</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        239
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">39</div>
+      <div>
+        <div class="name">Anneau de Brouce</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        238
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">40</div>
+      <div>
+        <div class="name">Couronne d'Allister</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        231
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">41</div>
+      <div>
+        <div class="name">Pavois frigorifié du Chevalier de Glace</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        229
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">42</div>
+      <div>
+        <div class="name">Anneau de Culbutoeuf</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        222
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">43</div>
+      <div>
+        <div class="name">Ceinture Glaciale</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        222
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">44</div>
+      <div>
+        <div class="name">Anneau Crustique</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        219
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">45</div>
+      <div>
+        <div class="name">Anneau d'Allister</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        217
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">46</div>
+      <div>
+        <div class="name">Bouclier du Stalak</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        217
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">47</div>
+      <div>
+        <div class="name">Croclier</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        215
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">48</div>
+      <div>
+        <div class="name">Ceinture de Gein</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        199
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">49</div>
+      <div>
+        <div class="name">Amulette de Gein</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        198
+      </div>
+    </div></div>
+  </div><div class="panel active" id="panel-runes">
+    <div class="sec-head">
+      <div class="sec-dot" style="background:var(--c-runes)"></div>
+      <div class="sec-title" style="color:var(--c-runes)">Runes</div>
+      <div class="sec-line"></div>
+      <div class="sec-meta">35 items · top 5 retenu</div>
+    </div>
+    <div class="items"><div class="row in">
+      <div class="row-bg" style="width:100%;background:var(--c-runes)"></div><div class="row-accent" style="background:var(--c-runes)"></div>
+      <div class="rank med">🥇</div>
+      <div>
+        <div class="name">Rune vi</div>
+        <div class="bar"><div class="bar-fill" style="width:100%;background:var(--c-runes)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-runes)">
+        4 718 052
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:46%;background:var(--c-runes)"></div><div class="row-accent" style="background:var(--c-runes)"></div>
+      <div class="rank med">🥈</div>
+      <div>
+        <div class="name">Rune Pa vi</div>
+        <div class="bar"><div class="bar-fill" style="width:46%;background:var(--c-runes)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-runes)">
+        2 164 844
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:37%;background:var(--c-runes)"></div><div class="row-accent" style="background:var(--c-runes)"></div>
+      <div class="rank med">🥉</div>
+      <div>
+        <div class="name">Rune cha</div>
+        <div class="bar"><div class="bar-fill" style="width:37%;background:var(--c-runes)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-runes)">
+        1 734 605
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:36%;background:var(--c-runes)"></div><div class="row-accent" style="background:var(--c-runes)"></div>
+      <div class="rank">4</div>
+      <div>
+        <div class="name">Rune Age</div>
+        <div class="bar"><div class="bar-fill" style="width:36%;background:var(--c-runes)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-runes)">
+        1 706 430
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:32%;background:var(--c-runes)"></div><div class="row-accent" style="background:var(--c-runes)"></div>
+      <div class="rank">5</div>
+      <div>
+        <div class="name">Rune fo</div>
+        <div class="bar"><div class="bar-fill" style="width:32%;background:var(--c-runes)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-runes)">
+        1 527 234
+      </div>
+    </div><div class="cutoff"><div class="cut-line"></div><span class="cut-label">hors top 5</span><div class="cut-line"></div></div><div class="row out">
+      
+      <div class="rank">6</div>
+      <div>
+        <div class="name">Rune Ine</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 437 080
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">7</div>
+      <div>
+        <div class="name">Rune Ra vi</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 309 579
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">8</div>
+      <div>
+        <div class="name">Rune Ré Per Eau</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 300 445
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">9</div>
+      <div>
+        <div class="name">Rune cri</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 223 348
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">10</div>
+      <div>
+        <div class="name">Rune Pa sa</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 158 917
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">11</div>
+      <div>
+        <div class="name">Rune pui</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 154 890
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">12</div>
+      <div>
+        <div class="name">Rune sa</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 154 890
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">13</div>
+      <div>
+        <div class="name">Rune Do terre</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 153 364
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">14</div>
+      <div>
+        <div class="name">Rune Ré Per terre</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 102 399
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">15</div>
+      <div>
+        <div class="name">Rune Do Air</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 083 978
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">16</div>
+      <div>
+        <div class="name">Rune Do feu</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        991 362
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">17</div>
+      <div>
+        <div class="name">Rune Prospe</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        989 535
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">18</div>
+      <div>
+        <div class="name">Rune Do eau</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        982 071
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">19</div>
+      <div>
+        <div class="name">Rune Pa cha</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        905 585
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">20</div>
+      <div>
+        <div class="name">Rune Pa fo</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        898 208
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">21</div>
+      <div>
+        <div class="name">Rune Pa age</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        881 403
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">22</div>
+      <div>
+        <div class="name">Rune Pa ine</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        881 301
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">23</div>
+      <div>
+        <div class="name">Rune Ré Per air</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        879 339
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">24</div>
+      <div>
+        <div class="name">Rune Ré Per feu</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        870 549
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">25</div>
+      <div>
+        <div class="name">Rune Do neutre</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        779 124
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">26</div>
+      <div>
+        <div class="name">Rune Do Cri</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        737 303
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">27</div>
+      <div>
+        <div class="name">Rune tac</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        701 707
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">28</div>
+      <div>
+        <div class="name">Rune fui</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        684 848
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">29</div>
+      <div>
+        <div class="name">Rune ini</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        661 403
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">30</div>
+      <div>
+        <div class="name">Rune Do Per so</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        210 950
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">31</div>
+      <div>
+        <div class="name">Rune GA PA</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        208 606
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">32</div>
+      <div>
+        <div class="name">Rune GA PME</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        194 819
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">33</div>
+      <div>
+        <div class="name">Rune PO</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        189 982
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">34</div>
+      <div>
+        <div class="name">Rune Do Per di</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        24 430
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">35</div>
+      <div>
+        <div class="name">Rune Emeraude</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        1 460
+      </div>
+    </div></div>
+  </div><div class="panel" id="panel-montiliers">
+    <div class="sec-head">
+      <div class="sec-dot" style="background:var(--c-montiliers)"></div>
+      <div class="sec-title" style="color:var(--c-montiliers)">Montiliers</div>
+      <div class="sec-line"></div>
+      <div class="sec-meta">11 items · top 5 retenu</div>
+    </div>
+    <div class="items"><div class="row in">
+      <div class="row-bg" style="width:100%;background:var(--c-montiliers)"></div><div class="row-accent" style="background:var(--c-montiliers)"></div>
+      <div class="rank med">🥇</div>
+      <div>
+        <div class="name">Sakochere</div>
+        <div class="bar"><div class="bar-fill" style="width:100%;background:var(--c-montiliers)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-montiliers)">
+        549
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:54%;background:var(--c-montiliers)"></div><div class="row-accent" style="background:var(--c-montiliers)"></div>
+      <div class="rank med">🥈</div>
+      <div>
+        <div class="name">Kramkram</div>
+        <div class="bar"><div class="bar-fill" style="width:54%;background:var(--c-montiliers)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-montiliers)">
+        296
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:36%;background:var(--c-montiliers)"></div><div class="row-accent" style="background:var(--c-montiliers)"></div>
+      <div class="rank med">🥉</div>
+      <div>
+        <div class="name">Kompost</div>
+        <div class="bar"><div class="bar-fill" style="width:36%;background:var(--c-montiliers)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-montiliers)">
+        198
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:32%;background:var(--c-montiliers)"></div><div class="row-accent" style="background:var(--c-montiliers)"></div>
+      <div class="rank">4</div>
+      <div>
+        <div class="name">Koliphant de Lexandre</div>
+        <div class="bar"><div class="bar-fill" style="width:32%;background:var(--c-montiliers)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-montiliers)">
+        176
+      </div>
+    </div><div class="row in">
+      <div class="row-bg" style="width:30%;background:var(--c-montiliers)"></div><div class="row-accent" style="background:var(--c-montiliers)"></div>
+      <div class="rank">5</div>
+      <div>
+        <div class="name">Brulih</div>
+        <div class="bar"><div class="bar-fill" style="width:30%;background:var(--c-montiliers)"></div></div>
+      </div>
+      <div class="sales" style="color:var(--c-montiliers)">
+        165
+      </div>
+    </div><div class="cutoff"><div class="cut-line"></div><span class="cut-label">hors top 5</span><div class="cut-line"></div></div><div class="row out">
+      
+      <div class="rank">6</div>
+      <div>
+        <div class="name">Hurledent</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        137
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">7</div>
+      <div>
+        <div class="name">Siroko</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        134
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">8</div>
+      <div>
+        <div class="name">Kougnard</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        129
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">9</div>
+      <div>
+        <div class="name">Delhuge</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        116
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">10</div>
+      <div>
+        <div class="name">Koliphant Mamukil</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        111
+      </div>
+    </div><div class="row out">
+      
+      <div class="rank">11</div>
+      <div>
+        <div class="name">Bouflux</div>
+        
+      </div>
+      <div class="sales" style="color:var(--muted2)">
+        87
+      </div>
+    </div></div>
+  </div></div>
+
+  <div class="footer">
+    <div class="footer-logo">TENMALEXIS</div>
+    <div class="footer-sub">youtube.com/@tenmalexis · Avril 2026</div>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  dofus:{label:'Dofus',quota:5,color:'var(--c-dofus)',items:[
+    {name:'Dofus Pourpre',     sales:2709},
+    {name:'Dofus Kaliptus',    sales:2649},
+    {name:'Dofus Cawotte',     sales:2433},
+    {name:'Dofus Turquoise',   sales:1894},
+    {name:'Dofus Emeraude',    sales:1460},
+    {name:'Dofus des Glaces',  sales:1392},
+    {name:'Dofus Abyssal',     sales:1009},
+    {name:'Dofus Ocre',        sales:837},
+    {name:'Dofus Nebuleux',    sales:736},
+    {name:'Dofus Vulbis',      sales:674},
+    {name:'Dofus Ivoire',      sales:669},
+    {name:'Dokoko',            sales:689},
+    {name:'Dorigami',          sales:632},
+    {name:'Dofus des Veilleurs',sales:552},
+    {name:'Dofus des Veilleurs',sales:552},
+    {name:'Dofus Tacheté',     sales:525},
+    {name:'Dolmanax',          sales:523},
+    {name:'Dofus Ébène',       sales:519},
+    {name:'Dofus Cauchemar',   sales:227},
+    {name:'Dofus Forgelave',   sales:268},
+    {name:'Dofus Sylvestre',   sales:132},
+  ]},
+  prysma:{label:'Prysmaradite',quota:5,color:'var(--c-prysma)',items:[
+    {name:'Prycipithon Mate',       sales:515},
+    {name:'Prygen',                 sales:415},
+    {name:'Prynyang',               sales:277},
+    {name:'Pryssion Iridescente',   sales:205},
+    {name:'Espryt',                 sales:207},
+    {name:'Prymune',                sales:200},
+    {name:'Ratrapry',               sales:197},
+    {name:'Prycipithon Brillante',  sales:137},
+    {name:'Prycipithon Iridescente',sales:132},
+  ]},
+  fam:{label:'Familiers',quota:5,color:'var(--c-fam)',items:[
+    {name:'Kokulte',              sales:1962},
+    {name:'Nomoon',               sales:1142},
+    {name:'Chacha',               sales:998},
+    {name:'Kanigloups',           sales:547},
+    {name:'Bisouglours',          sales:451},
+    {name:'Blerodoudou',          sales:494},
+    {name:'Bulbisou',             sales:434},
+    {name:'Givrefoux',            sales:342},
+    {name:'Bworky',               sales:295},
+    {name:'Chienchien',           sales:295},
+    {name:'Gwo Tofu Ventripotent',sales:250},
+    {name:'Pioute jaune',         sales:244},
+    {name:'Pioute rouge',         sales:220},
+    {name:'Pioute bleu',          sales:205},
+    {name:'Pioute verte',         sales:199},
+    {name:'Leopardo',             sales:107},
+  ]},
+  equip:{label:'Équipements',quota:10,color:'var(--c-equip)',items:[
+    {name:'Anneau Nobstant',                      sales:1234},
+    {name:'Dora Bora',                            sales:1010},
+    {name:'Coiffe de Padgref',                    sales:888},
+    {name:'Racine de Floribonde',                 sales:750},
+    {name:'Bottes du Cycloide',                   sales:683},
+    {name:'Collier du Minotot',                   sales:651},
+    {name:'Geta de Padgref',                      sales:583},
+    {name:'Cape du Minotot',                      sales:565},
+    {name:'Bracelet du Minotot',                  sales:570},
+    {name:'Anneau de Padgref',                    sales:571},
+    {name:'Ceinture du Strigide',                 sales:566},
+    {name:'Amulette du Strigide',                 sales:551},
+    {name:'Quatre-feuilles',                      sales:515},
+    {name:'Bouclier d\'Asse',                     sales:510},
+    {name:'Corbacape Mastralis',                  sales:455},
+    {name:'Bottines des sous-bois',               sales:408},
+    {name:'Bouclier du Cycloide',                 sales:404},
+    {name:'Carapace de Torkelonia',               sales:374},
+    {name:'Baguette de Torkelonia',               sales:367},
+    {name:'Cape au logis',                        sales:356},
+    {name:'Bouclier du Sadida',                   sales:338},
+    {name:'Cape de Glourdorak',                   sales:334},
+    {name:'Tranche des sous-bois',                sales:327},
+    {name:'Hache à Lamelles',                     sales:317},
+    {name:'Lame givrée du Chevalier de Glace',    sales:306},
+    {name:'Alliance Gloursonne',                  sales:304},
+    {name:'Arc de Culbutoeuf',                    sales:281},
+    {name:'Egide d\'Allister',                    sales:269},
+    {name:'Crocanneau',                           sales:269},
+    {name:'Ecorce de Brouce',                     sales:262},
+    {name:'Collier de Tourthon',                  sales:257},
+    {name:'Ceinture de Brouce',                   sales:253},
+    {name:'Ecu de Danathor',                      sales:250},
+    {name:'Ceste gelé du Chevalier de Glace',     sales:250},
+    {name:'Bouclier d\'Ilyzaelle',                sales:246},
+    {name:'Disque de Culbutoeuf',                 sales:245},
+    {name:'Anneau de Brouce',                     sales:238},
+    {name:'Bouclier du Captain Amakna',           sales:239},
+    {name:'Couronne d\'Allister',                 sales:231},
+    {name:'Pavois frigorifié du Chevalier de Glace',sales:229},
+    {name:'Anneau de Culbutoeuf',                 sales:222},
+    {name:'Ceinture Glaciale',                    sales:222},
+    {name:'Anneau d\'Allister',                   sales:217},
+    {name:'Bouclier du Stalak',                   sales:217},
+    {name:'Croclier',                             sales:215},
+    {name:'Anneau Crustique',                     sales:219},
+    {name:'Ceinture de Gein',                     sales:199},
+    {name:'Amulette de Gein',                     sales:198},
+    {name:'Les Maidartes',                        sales:342},
+  ]},
+  runes:{label:'Runes',quota:5,color:'var(--c-runes)',items:[
+    {name:'Rune vi',         sales:4718052},
+    {name:'Rune Pa vi',      sales:2164844},
+    {name:'Rune cha',        sales:1734605},
+    {name:'Rune Age',        sales:1706430},
+    {name:'Rune fo',         sales:1527234},
+    {name:'Rune Ine',        sales:1437080},
+    {name:'Rune Emeraude',   sales:1460},
+    {name:'Rune Ra vi',      sales:1309579},
+    {name:'Rune Ré Per Eau', sales:1300445},
+    {name:'Rune cri',        sales:1223348},
+    {name:'Rune Pa sa',      sales:1158917},
+    {name:'Rune pui',        sales:1154890},
+    {name:'Rune sa',         sales:1154890},
+    {name:'Rune Do terre',   sales:1153364},
+    {name:'Rune Do Air',     sales:1083978},
+    {name:'Rune Ré Per terre',sales:1102399},
+    {name:'Rune Prospe',     sales:989535},
+    {name:'Rune Do feu',     sales:991362},
+    {name:'Rune Do eau',     sales:982071},
+    {name:'Rune Pa cha',     sales:905585},
+    {name:'Rune Pa fo',      sales:898208},
+    {name:'Rune Pa age',     sales:881403},
+    {name:'Rune Pa ine',     sales:881301},
+    {name:'Rune Ré Per air', sales:879339},
+    {name:'Rune Ré Per feu', sales:870549},
+    {name:'Rune Do Cri',     sales:737303},
+    {name:'Rune Do neutre',  sales:779124},
+    {name:'Rune tac',        sales:701707},
+    {name:'Rune fui',        sales:684848},
+    {name:'Rune ini',        sales:661403},
+    {name:'Rune Do Per so',  sales:210950},
+    {name:'Rune GA PA',      sales:208606},
+    {name:'Rune GA PME',     sales:194819},
+    {name:'Rune PO',         sales:189982},
+    {name:'Rune Do Per di',  sales:24430},
+  ]},
+  montiliers:{label:'Montiliers',quota:5,color:'var(--c-montiliers)',items:[
+    {name:'Sakochere',             sales:549},
+    {name:'Kramkram',              sales:296},
+    {name:'Kompost',               sales:198},
+    {name:'Koliphant de Lexandre', sales:176},
+    {name:'Brulih',                sales:165},
+    {name:'Hurledent',             sales:137},
+    {name:'Siroko',                sales:134},
+    {name:'Kougnard',              sales:129},
+    {name:'Delhuge',               sales:116},
+    {name:'Koliphant Mamukil',     sales:111},
+    {name:'Bouflux',               sales:87},
+  ]},
+};
+
+const CATS=['dofus','prysma','fam','equip','runes','montiliers'];
+const MEDALS=['🥇','🥈','🥉'];
+let active='dofus';
+
+function fmt(n){
+  return n.toLocaleString('fr-FR');
+}
+
+function buildTabs(){
+  document.getElementById('tabs').innerHTML=CATS.map(id=>{
+    const d=DATA[id];
+    return `<div class="tab${id===active?' active':''}" data-cat="${id}" onclick="switchTab('${id}')">
+      <span class="tab-name">${d.label}</span>
+      <span class="tab-count">${d.items.length} items · top ${d.quota}</span>
+    </div>`;
+  }).join('');
+}
+
+function buildPanel(id){
+  const d=DATA[id];
+  // dedupe par nom
+  const seen=new Set();
+  const items=d.items.filter(i=>{if(seen.has(i.name))return false;seen.add(i.name);return true;});
+  const sorted=[...items].sort((a,b)=>b.sales-a.sales);
+  const max=sorted[0]?.sales||1;
+  let rows='';
+  sorted.forEach((item,i)=>{
+    const inTop=i<d.quota;
+    const pct=Math.round(item.sales/max*100);
+    const rk=i<3?`<div class="rank med">${MEDALS[i]}</div>`:`<div class="rank">${i+1}</div>`;
+    if(i===d.quota){
+      rows+=`<div class="cutoff"><div class="cut-line"></div><span class="cut-label">hors top ${d.quota}</span><div class="cut-line"></div></div>`;
+    }
+    rows+=`<div class="row ${inTop?'in':'out'}">
+      ${inTop?`<div class="row-bg" style="width:${pct}%;background:${d.color}"></div><div class="row-accent" style="background:${d.color}"></div>`:''}
+      ${rk}
+      <div>
+        <div class="name">${item.name}</div>
+        ${inTop?`<div class="bar"><div class="bar-fill" style="width:${pct}%;background:${d.color}"></div></div>`:''}
+      </div>
+      <div class="sales" style="color:${inTop?d.color:'var(--muted2)'}">
+        ${fmt(item.sales)}
+      </div>
+    </div>`;
+  });
+  return `<div class="panel${id===active?' active':''}" id="panel-${id}">
+    <div class="sec-head">
+      <div class="sec-dot" style="background:${d.color}"></div>
+      <div class="sec-title" style="color:${d.color}">${d.label}</div>
+      <div class="sec-line"></div>
+      <div class="sec-meta">${sorted.length} items · top ${d.quota} retenu</div>
+    </div>
+    <div class="items">${rows}</div>
+  </div>`;
+}
+
+function switchTab(id){
+  active=id;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active',t.dataset.cat===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='panel-'+id));
+}
+
+buildTabs();
+document.getElementById('panels').innerHTML=CATS.map(buildPanel).join('');
+</script>
+
+
+</body></html>
